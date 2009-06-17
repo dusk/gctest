@@ -1,0 +1,670 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090617185504)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (7.1ms)[0m   [0;1mCREATE TABLE "pages" ("id" serial primary key, "title" character varying(255), "image" character varying(255), "text" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090617185504')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 14:59:45) [GET]
+  [4;36;1mPage Load (1.6ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:00:04) [GET]
+  [4;36;1mPage Load (1.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/pages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:00:05) [GET]
+Rendering pages/new
+Rendered pages/_form (10.9ms)
+Completed in 37ms (View: 25, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:00:08) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:00:08.917991', NULL, '2009-06-17 19:00:08.917991', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x257202c>
+Completed in 38ms (DB: 3) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:00:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:00:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering pages/show
+Completed in 64ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:00:24) [GET]
+  [4;36;1mPage Load (1.9ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 20ms (View: 13, DB: 2) | 200 OK [http://localhost/pages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:00:46) [GET]
+  [4;35;1mPage Load (2.2ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 25ms (View: 17, DB: 3) | 200 OK [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-17 15:01:07) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:437:in `recognize'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:432:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:65:in `dispatch'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:88:in `_call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:59:in `initialize'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:28:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:83:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:79:in `dispatch_cgi'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:29:in `dispatch'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+  /Users/alex/.gem/ruby/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+  /Users/alex/.gem/ruby/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/bin/thin:6
+  /Users/alex/.gem/ruby/1.8/bin/thin:19:in `load'
+  /Users/alex/.gem/ruby/1.8/bin/thin:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:01:32) [GET]
+  [4;36;1mPage Load (1.4ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/pages]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:01:34) [GET]
+Rendering pages/new
+Rendered pages/_form (2.5ms)
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:01:40) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:01:40.359553', NULL, '2009-06-17 19:01:40.359553', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x2688470>
+Completed in 17ms (DB: 2) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:01:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: relation "pages" does not exist
+: SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "pages" does not exist
+: SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: relation "pages" does not exist
+: SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "pages" does not exist
+: SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (93.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090617185504)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (11.7ms)[0m   [0;1mCREATE TABLE "pages" ("id" serial primary key, "title" character varying(255), "image" character varying(255), "text" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090617185504')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-17 15:36:41) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:437:in `recognize'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:432:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:65:in `dispatch'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:88:in `_call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:59:in `initialize'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:28:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:83:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:79:in `dispatch_cgi'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:29:in `dispatch'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:76:in `pre_process'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `catch'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:74:in `pre_process'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:57:in `process'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/connection.rb:42:in `receive_data'
+  /Users/alex/.gem/ruby/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run_machine'
+  /Users/alex/.gem/ruby/1.8/gems/eventmachine-0.12.8/lib/eventmachine.rb:242:in `run'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/backends/base.rb:57:in `start'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/server.rb:156:in `start'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/controllers/controller.rb:80:in `start'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `send'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/runner.rb:174:in `run_command'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/lib/thin/runner.rb:140:in `run!'
+  /Users/alex/.gem/ruby/1.8/gems/thin-1.2.2/bin/thin:6
+  /Users/alex/.gem/ruby/1.8/bin/thin:19:in `load'
+  /Users/alex/.gem/ruby/1.8/bin/thin:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:36:44) [GET]
+Rendering pages/new
+Rendered pages/_form (3.2ms)
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:36:48) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:36:48.070401', NULL, '2009-06-17 19:36:48.070401', NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Page:0x258a03c>
+Completed in 34ms (DB: 3) | 302 Found [http://localhost/pages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:36:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:36:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering pages/show
+Completed in 65ms (View: 56, DB: 1) | 200 OK [http://localhost/pages/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:37:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering pages/show
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/pages/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:37:20) [GET]
+  [4;35;1mPage Load (2.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 24ms (View: 16, DB: 3) | 200 OK [http://localhost/pages/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:37:21) [GET]
+Rendering pages/new
+Rendered pages/_form (3.1ms)
+Completed in 25ms (View: 14, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:37:24) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:37:24.841892', NULL, '2009-06-17 19:37:24.841892', NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Page:0x235d7b4>
+Completed in 25ms (DB: 2) | 302 Found [http://localhost/pages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:37:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+Rendering pages/show
+Completed in 74ms (View: 66, DB: 1) | 200 OK [http://localhost/pages/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090617185504)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mDROP TABLE "pages"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090617185504'[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090617185504)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCREATE TABLE "pages" ("id" serial primary key, "title" character varying(255), "image" character varying(255), "text" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090617185504')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:39:57) [GET]
+  [4;36;1mPage Load (1.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/pages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:39:58) [GET]
+Rendering pages/new
+Rendered pages/_form (5.3ms)
+Completed in 31ms (View: 20, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:40:02) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:40:02.141424', NULL, '2009-06-17 19:40:02.141424', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x2584a10>
+Completed in 27ms (DB: 3) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:40:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:42:20.629422', E'foo', '2009-06-17 19:42:20.629422', E'text', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:43:11) [GET]
+  [4;36;1mPage Load (1.6ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/pages/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:43:14) [GET]
+Rendering pages/new
+Rendered pages/_form (2.9ms)
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:43:19) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 19:43:19.740231', NULL, '2009-06-17 19:43:19.740231', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x2399df4>
+Completed in 25ms (DB: 2) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:43:19) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering pages/show
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/pages/3]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 15:46:09) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering pages/show
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/pages/3]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:46:12) [GET]
+  [4;36;1mPage Load (1.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 18ms (View: 13, DB: 2) | 200 OK [http://localhost/pages/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 15:51:37) [GET]
+  [4;36;1mPage Load (1.6ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 23ms (View: 16, DB: 2) | 200 OK [http://localhost/pages/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:51:42) [GET]
+Rendering pages/new
+Rendered pages/_form (3.4ms)
+Completed in 25ms (View: 15, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 15:51:48) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 15:59:14) [GET]
+Rendering pages/new
+Rendered pages/_form (3.5ms)
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-06-17 16:03:40) [GET]
+  [4;36;1mPage Load (1.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering pages/index
+Completed in 20ms (View: 15, DB: 2) | 200 OK [http://localhost/pages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 16:03:42) [GET]
+Rendering pages/new
+Rendered pages/_form (4.4ms)
+Completed in 33ms (View: 21, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 16:03:44) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 20:03:44.229388', NULL, '2009-06-17 20:03:44.229388', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x239f4d4>
+Completed in 37ms (DB: 3) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 16:03:44) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering pages/show
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://localhost/pages/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-06-17 16:03:51) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering pages/edit
+Rendered pages/_form (3.0ms)
+Completed in 78ms (View: 69, DB: 1) | 200 OK [http://localhost/pages/4/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-06-17 16:03:54) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "id"=>"4", "page"=>nil}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Page:0x263cb60>
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/pages/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 16:03:54) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering pages/show
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 16:05:06) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering pages/show
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/4]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-17 16:05:08) [GET]
+
+ActionController::RoutingError (No route matches "/pages/" with {:method=>:get}):
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:437:in `recognize'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:432:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:65:in `dispatch'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:88:in `_call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:59:in `initialize'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:28:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:83:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/rails-2.3.0/lib/rails/rack/static.rb:27:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/rails-2.3.0/lib/rails/rack/log_tailer.rb:17:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/rails-2.3.0/lib/commands/server.rb:100
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 16:05:12) [GET]
+Rendering pages/new
+Rendered pages/_form (2.7ms)
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 16:05:17) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 20:05:17.712687', NULL, '2009-06-17 20:05:17.712687', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x24d1104>
+Completed in 17ms (DB: 2) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 16:05:17) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) [0m
+Rendering pages/show
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/5]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 20:09:01.642855', E'hi', '2009-06-17 20:09:01.642855', E'there', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."text" = E'there') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-17 16:10:35) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:437:in `recognize'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/routing/route_set.rb:432:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:65:in `dispatch'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:88:in `_call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:59:in `initialize'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:29:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:9:in `cache'
+  /Users/alex/.gem/ruby/1.8/gems/activerecord-2.3.0/lib/active_record/query_cache.rb:28:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/params_parser.rb:15:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/rewindable_input.rb:25:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/failsafe.rb:11:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/actionpack-2.3.0/lib/action_controller/dispatcher.rb:83:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/rails-2.3.0/lib/rails/rack/static.rb:27:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/rails-2.3.0/lib/rails/rack/log_tailer.rb:17:in `call'
+  /Users/alex/.gem/ruby/1.8/gems/rails-2.3.0/lib/commands/server.rb:100
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-06-17 16:10:39) [GET]
+Rendering pages/new
+Rendered pages/_form (2.6ms)
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/pages/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-06-17 16:10:44) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"0nQyEVOXbVPx8MCy/tbqAheUh+Unt3j9xeURf2WbL6A=", "page"=>nil}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "text", "image") VALUES('2009-06-17 20:10:44.304426', NULL, '2009-06-17 20:10:44.304426', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to #<Page:0x23c853c>
+Completed in 23ms (DB: 2) | 302 Found [http://localhost/pages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-06-17 16:10:44) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 7) [0m
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/7]

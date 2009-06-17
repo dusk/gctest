@@ -1,0 +1,17 @@
+%h1 Pages
+
+%table
+  %tr
+    %th Title
+    %th Image
+    %th Text
+  - for page in @pages
+    %tr
+      %td= h page.title
+      %td= h page.image
+      %td= h page.text
+      %td= link_to 'Show', page
+      %td= link_to 'Edit', edit_page_path(page)
+      %td= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Page", new_page_path
